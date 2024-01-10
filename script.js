@@ -1,8 +1,7 @@
 let title, message, date;
 let entris = [];
 let entry;
-let newDiv;
-let emptyDiv;
+let newDiv, new1, new2;
 
 document.getElementById("myform").addEventListener("submit", function (event) {
     event.preventDefault();
@@ -15,12 +14,28 @@ document.getElementById("myform").addEventListener("submit", function (event) {
     entry = { title, message, date };
     entris.push(entry);
     console.log(entry);
-    
+
     newDiv = document.createElement("div");
     newDiv.id = "creatediv";
-    newDiv.style.backgroundColor = "rgba(255,255,255,0.3)";
-    newDiv.style.width = "100%";
-    newDiv.style.height = "200px";
-    newDiv.innerHTML += `<h4>${entry.title}, ${entry.message}, ${entry.date}</h4>`;
+
+    newDiv.innerHTML = `
+            <div id="title-div">
+                <h3>${entry.title}</h3>
+                <h4>hi</h4>
+                <h4> 2024-01-07</h4>
+            </div>
+            <div style="flex-grow: 1;">
+
+            </div>
+            <div id="button-div">
+                <button type="button" id="delete">Delete</button>
+                <button type="button" id="edit">Edit</button>
+                <button type="button" id="mark">Mark us complete</button>
+            </div>
+    `
+    
     document.getElementById("container-fluid").appendChild(newDiv);
+    document.getElementById("container-fluid").style.flexDirection = "column"
+    document.getElementById("container-fluid").style.alignItems = "center"
+    document.getElementById("container-fluid").style.justifyContent = "flex-start";
 });
