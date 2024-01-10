@@ -60,7 +60,7 @@ input{
 #creatediv{
     width: 90%;
     min-height: 200px;
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255,255,255,0.5);
     display: flex;
     justify-content: flex-end;
     border-radius: 20px;
@@ -90,13 +90,4 @@ input{
     border-radius: 10px;
     font-weight: 700;
     font-size: 15px;
-}
-#delete{
-    background-color: rgba(255, 0, 0,0.8);
-}
-#edit{
-    background-color: rgba(9, 255, 0,0.8);
-}
-#mark{
-    background-color: rgba(0, 191, 255,0.8);
 }
