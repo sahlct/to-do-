@@ -5,6 +5,7 @@ let newDiv, new1, new2;
 let count = 0;
 let divId;
 let mainid;
+let selectedIndex;
 
 document.getElementById("myform").addEventListener("submit", function (event) {
     event.preventDefault();
@@ -37,7 +38,7 @@ document.getElementById("myform").addEventListener("submit", function (event) {
                 <button type="button" id="delete" class="btn btn-success">Delete</button>
                 <button type="button" id="edit" class="btn btn-primary" data-bs-toggle="modal"
                 data-bs-target="#editmodal" onclick="passindex(${count})">Edit</button>
-                <button type="button" id="mark" class="btn btn-danger">Mark us complete</button>
+                <button type="button" id="mark" class="btn btn-danger" onclick="read(${count})">Mark us complete</button>
             </div>
     `
 
@@ -49,12 +50,12 @@ document.getElementById("myform").addEventListener("submit", function (event) {
     }
 });
 
-let selectedIndex;
-function passindex(count) {
-    selectedIndex = count
-    document.getElementById("title-second").value = entris[count-1].title;
-    document.getElementById("message-second").value = entris[count-1].message;
-    document.getElementById("date-second").value = entris[count-1].date;
+    
+function passindex(index) {
+    selectedIndex = index
+    document.getElementById("title-second").value = entris[index-1].title;
+    document.getElementById("message-second").value = entris[index-1].message;
+    document.getElementById("date-second").value = entris[index-1].date;
 }
 
 document.getElementById("myform-second").addEventListener("submit", function (evnt) {
@@ -64,6 +65,8 @@ document.getElementById("myform-second").addEventListener("submit", function (ev
     entris[selectedIndex-1].date = document.getElementById("date-second").value;
 
     const cards = document.getElementsByClassName('card_div');
+    console.log(cards);
+
     const selectedCard = cards[selectedIndex - 1]
     selectedCard.innerHTML = `
     <div id="title-div">
@@ -78,10 +81,22 @@ document.getElementById("myform-second").addEventListener("submit", function (ev
         <button type="button" id="delete" class="btn btn-success">Delete</button>
         <button type="button" id="edit" class="btn btn-primary" data-bs-toggle="modal"
         data-bs-target="#editmodal" onclick="passindex(${selectedIndex})">Edit</button>
-        <button type="button" id="mark" class="btn btn-danger">Mark us complete</button>
+        <button type="button" id="mark" class="btn btn-danger" onclick="read(${selectedIndex})">Mark us complete</button>
     </div>
 `
     console.log(entris);
     evnt.target.reset();
 
 })
+
+function read(count){
+    selectedIndex = count
+    const reader = document.getElementsByClassName('card_div');
+    let classcheck = "mainread"
+    const readercard = reader[selectedIndex - 1]
+    if(readercard.classList.contains(classcheck)){
+        readercard.classList.remove("mainread")
+    }else{
+        readercard.classList.add("mainread");
+    }
+}

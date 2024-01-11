@@ -57,6 +57,9 @@ body{
 input{
     cursor: text;
 }
+.mainread #title-div{
+    text-decoration: line-through;
+}
 #creatediv{
     width: 90%;
     min-height: 200px;
