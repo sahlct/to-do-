@@ -35,7 +35,7 @@ document.getElementById("myform").addEventListener("submit", function (event) {
 
             </div>
             <div id="button-div">
-                <button type="button" id="delete" class="btn btn-success">Delete</button>
+                <button type="button" id="delete" class="btn btn-success" onclick="datadelete(${count})">Delete</button>
                 <button type="button" id="edit" class="btn btn-primary" data-bs-toggle="modal"
                 data-bs-target="#editmodal" onclick="passindex(${count})">Edit</button>
                 <button type="button" id="mark" class="btn btn-danger" onclick="read(${count})">Mark us complete</button>
@@ -78,13 +78,13 @@ document.getElementById("myform-second").addEventListener("submit", function (ev
 
     </div>
     <div id="button-div">
-        <button type="button" id="delete" class="btn btn-success">Delete</button>
+        <button type="button" id="delete" class="btn btn-success onclick="datadelete(${selectedIndex})"">Delete</button>
         <button type="button" id="edit" class="btn btn-primary" data-bs-toggle="modal"
         data-bs-target="#editmodal" onclick="passindex(${selectedIndex})">Edit</button>
         <button type="button" id="mark" class="btn btn-danger" onclick="read(${selectedIndex})">Mark us complete</button>
     </div>
 `
-    console.log(entris);
+    
     evnt.target.reset();
 
 })
@@ -92,11 +92,19 @@ document.getElementById("myform-second").addEventListener("submit", function (ev
 function read(count){
     selectedIndex = count
     const reader = document.getElementsByClassName('card_div');
-    let classcheck = "mainread"
     const readercard = reader[selectedIndex - 1]
+    let classcheck = "mainread"
     if(readercard.classList.contains(classcheck)){
         readercard.classList.remove("mainread")
     }else{
         readercard.classList.add("mainread");
     }
+}
+
+function datadelete(count){
+    selectedIndex = count;
+    const deleter = document.getElementsByClassName('card_div');
+    const deletercard = deleter[selectedIndex-1]
+    deletercard.remove();
+    console.log(entris);
 }
