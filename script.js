@@ -52,24 +52,24 @@ document.getElementById("myform").addEventListener("submit", function (event) {
 let selectedIndex;
 function passindex(count) {
     selectedIndex = count
-    document.getElementById("title-second").value = entris[count - 1].title;
-    document.getElementById("message-second").value = entris[count - 1].message;
-    document.getElementById("date-second").value = entris[count - 1].date;
+    document.getElementById("title-second").value = entris[count-1].title;
+    document.getElementById("message-second").value = entris[count-1].message;
+    document.getElementById("date-second").value = entris[count-1].date;
 }
 
 document.getElementById("myform-second").addEventListener("submit", function (evnt) {
     evnt.preventDefault();
-    title = document.getElementById("title-second").value;
-    message = document.getElementById("message-second").value;
-    date = document.getElementById("date-second").value;
+    entris[selectedIndex-1].title = document.getElementById("title-second").value;
+    entris[selectedIndex-1].message = document.getElementById("message-second").value;
+    entris[selectedIndex-1].date = document.getElementById("date-second").value;
 
     const cards = document.getElementsByClassName('card_div');
     const selectedCard = cards[selectedIndex - 1]
     selectedCard.innerHTML = `
     <div id="title-div">
-        <h3>${title}</h3>
-        <h4>${message}</h4>
-        <h4>${date}</h4>
+        <h3>${entris[selectedIndex-1].title}</h3>
+        <h4>${entris[selectedIndex-1].message}</h4>
+        <h4>${entris[selectedIndex-1].date}</h4>
     </div>
     <div style="flex-grow: 1;">
 
@@ -77,10 +77,11 @@ document.getElementById("myform-second").addEventListener("submit", function (ev
     <div id="button-div">
         <button type="button" id="delete" class="btn btn-success">Delete</button>
         <button type="button" id="edit" class="btn btn-primary" data-bs-toggle="modal"
-        data-bs-target="#editmodal" onclick="passindex(${count})">Edit</button>
+        data-bs-target="#editmodal" onclick="passindex(${selectedIndex})">Edit</button>
         <button type="button" id="mark" class="btn btn-danger">Mark us complete</button>
     </div>
 `
+    console.log(entris);
     evnt.target.reset();
 
 })
