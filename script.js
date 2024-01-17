@@ -28,8 +28,8 @@ document.getElementById("myform").addEventListener("submit", function (event) {
         newDiv.innerHTML = `
             <div id="title-div">
                 <h3>${entry.title}</h3>
-                <h4>${entry.message}</h4>
-                <h4>${entry.date}</h4>
+                <h6>${entry.message}</h6>
+                <h6>${entry.date}</h6>
             </div>
             <div style="flex-grow: 1;">
 
@@ -75,8 +75,8 @@ document.getElementById("myform-second").addEventListener("submit", function (ev
     selectedCard.innerHTML = `
         <div id="title-div">
             <h3>${entris[selectedIndex - 1].title}</h3>
-            <h4>${entris[selectedIndex - 1].message}</h4>
-            <h4>${entris[selectedIndex - 1].date}</h4>
+            <h6>${entris[selectedIndex - 1].message}</h6>
+            <h6>${entris[selectedIndex - 1].date}</h6>
         </div>
         <div style="flex-grow: 1;"></div>
         <div id="button-div">
@@ -138,8 +138,8 @@ function rearrangeDivs() {
         newDiv.innerHTML = `
             <div id="title-div">
                 <h3>${entris[count].title}</h3>
-                <h4>${entris[count].message}</h4>
-                <h4>${entris[count].date}</h4>
+                <h6>${entris[count].message}</h6>
+                <h6>${entris[count].date}</h6>
             </div>
             <div style="flex-grow: 1;"></div>
             <div id="button-div">
