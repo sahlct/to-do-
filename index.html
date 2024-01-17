@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div id="container-fluid">
+    <div id="containers">
         <div id="main">
             <div id="select"><select id="select_box">
                     <option>display all tools</option>
@@ -33,14 +33,14 @@
                             <form id="myform">
                                 <div class="mb-3">
                                     <label for="title-name" class="col-form-label">Recipient:</label>
-                                    <input type="text" class="form-control" id="title-name" required>
+                                    <input type="text" class="form-control" id="title-name">
                                 </div>
                                 <div class="mb-3">
                                     <label for="message-text" class="col-form-label">Message:</label>
-                                    <textarea class="form-control" id="message-text" required></textarea>
+                                    <textarea class="form-control" id="message-text" ></textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <input type="date" class="date w-100" id="date" required>
+                                    <input type="date" class="date w-100" id="date">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="submit" id="add-btn" class="btn btn-primary w-100" class="btn-close"
@@ -64,14 +64,14 @@
                         <form id="myform-second">
                             <div class="mb-3">
                                 <label for="title-second" class="col-form-label">Recipient:</label>
-                                <input type="text" class="form-control" id="title-second" required value="">
+                                <input type="text" class="form-control" id="title-second"  value="">
                             </div>
                             <div class="mb-3">
                                 <label for="message-second" class="col-form-label">Message:</label>
-                                <textarea class="form-control" id="message-second" required value=""></textarea>
+                                <textarea class="form-control" id="message-second"  value=""></textarea>
                             </div>
                             <div class="mb-4">
-                                <input type="date" class="date w-100" id="date-second" value="" required>
+                                <input type="date" class="date w-100" id="date-second" value="" >
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" id="edit-task" class="btn btn-primary w-100" class="btn-close"
@@ -87,6 +87,7 @@
 
             <div id="empty">List is Empty</div>
         </div>
+        <div id="container-fluid"></div>
 
         <!-- <div id="main-content"></div> -->
         <button id="fixed_btn" type="button" class="btn btn-primary" data-bs-toggle="modal"
