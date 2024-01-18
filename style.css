@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     width: 100%;
     min-height: 100vh;
     background-image: url(https://img.freepik.com/free-photo/nobody-exterior-wall-page-empty_1258-257.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1704153600&semt=ais);
@@ -10,7 +11,8 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-#containers{
+
+#containers {
     width: 100%;
     height: 100%;
     display: flex;
@@ -19,7 +21,8 @@ body{
     flex-direction: column;
     align-items: center;
 }
-#container-fluid{
+
+#container-fluid {
     width: 100%;
     height: 100%;
     display: flex;
@@ -28,20 +31,23 @@ body{
     flex-direction: row;
     align-items: center;
 }
-#main{
-    width: 200px;
+
+#main {
+    width: 250px;
     height: 150px;
     display: flex;
     flex-direction: column;
 }
-#select{
+
+#select {
     width: 100%;
     height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#empty{
+
+#empty {
     width: 100%;
     height: 50%;
     color: white;
@@ -49,7 +55,8 @@ body{
     justify-content: center;
     align-items: center;
 }
-#fixed_btn{
+
+#fixed_btn {
     border-radius: 50%;
     border: 1px solid black;
     position: fixed;
@@ -60,25 +67,30 @@ body{
     bottom: 30px;
     color: black;
 }
-.date{
+
+.date {
     border: none;
 }
-input{
+
+input {
     cursor: text;
 }
-.mainread #title-div{
+
+.mainread #title-div {
     text-decoration: line-through;
 }
-#creatediv{
+
+#creatediv {
     width: 90%;
     min-height: 140px;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     display: flex;
     justify-content: flex-end;
     border-radius: 20px;
     gap: 10px;
 }
-#title-div{
+
+#title-div {
     padding-left: 10px;
     min-width: 130px;
     width: 50%;
@@ -86,14 +98,16 @@ input{
     flex-direction: column;
     justify-content: space-evenly;
 }
-#button-div{
+
+#button-div {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-end;
     gap: 5px;
 }
-#button-div button{
+
+#button-div button {
     min-width: 65px;
     margin-right: 10px;
     width: 20%;
@@ -101,4 +115,8 @@ input{
     border-radius: 10px;
     font-weight: 700;
     font-size: 10px;
+}
+
+#filterdate {
+    display: none;
 }
